@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{70461CFD-BCA7-41B3-B899-916C452F220A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imprevis.Dataverse", "src\Imprevis.Dataverse\Imprevis.Dataverse.csproj", "{2BC6BD7D-67EA-4CB4-B823-5047932E510E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imprevis.Dataverse.Abstractions", "src\Imprevis.Dataverse.Abstractions\Imprevis.Dataverse.Abstractions.csproj", "{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imprevis.Dataverse.Resolvers.Http", "src\Imprevis.Dataverse.Resolvers.Http\Imprevis.Dataverse.Resolvers.Http.csproj", "{443AEB94-1C50-4DC1-B2C3-58DC099042E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{96B97E6B-1DA4-463B-8C86-17ACB0CBDF6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imprevis.Dataverse.Resolvers.ServiceBus", "src\Imprevis.Dataverse.Resolvers.ServiceBus\Imprevis.Dataverse.Resolvers.ServiceBus.csproj", "{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C55DAA47-F150-48CD-9EF8-E3214127FE07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imprevis.Dataverse.UnitTests", "test\Imprevis.Dataverse.UnitTests\Imprevis.Dataverse.UnitTests.csproj", "{7222CE11-074E-4ADE-803D-8D9701DFF158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests", "test\Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests\Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests.csproj", "{4074603E-05DF-4043-8125-3F1A13569F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprevis.Dataverse.Resolvers.Http.UnitTests", "test\Imprevis.Dataverse.Resolvers.Http.UnitTests\Imprevis.Dataverse.Resolvers.Http.UnitTests.csproj", "{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC6BD7D-67EA-4CB4-B823-5047932E510E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC6BD7D-67EA-4CB4-B823-5047932E510E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC6BD7D-67EA-4CB4-B823-5047932E510E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC6BD7D-67EA-4CB4-B823-5047932E510E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443AEB94-1C50-4DC1-B2C3-58DC099042E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443AEB94-1C50-4DC1-B2C3-58DC099042E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443AEB94-1C50-4DC1-B2C3-58DC099042E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443AEB94-1C50-4DC1-B2C3-58DC099042E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7222CE11-074E-4ADE-803D-8D9701DFF158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7222CE11-074E-4ADE-803D-8D9701DFF158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7222CE11-074E-4ADE-803D-8D9701DFF158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7222CE11-074E-4ADE-803D-8D9701DFF158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4074603E-05DF-4043-8125-3F1A13569F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4074603E-05DF-4043-8125-3F1A13569F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4074603E-05DF-4043-8125-3F1A13569F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4074603E-05DF-4043-8125-3F1A13569F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BC6BD7D-67EA-4CB4-B823-5047932E510E} = {70461CFD-BCA7-41B3-B899-916C452F220A}
+		{84C96DD9-7EFD-42A8-B776-4088BE7D9DEC} = {70461CFD-BCA7-41B3-B899-916C452F220A}
+		{443AEB94-1C50-4DC1-B2C3-58DC099042E1} = {70461CFD-BCA7-41B3-B899-916C452F220A}
+		{0D42F9F4-6B41-4EA4-ABA6-6CF2045B5F45} = {70461CFD-BCA7-41B3-B899-916C452F220A}
+		{7222CE11-074E-4ADE-803D-8D9701DFF158} = {96B97E6B-1DA4-463B-8C86-17ACB0CBDF6B}
+		{4074603E-05DF-4043-8125-3F1A13569F96} = {96B97E6B-1DA4-463B-8C86-17ACB0CBDF6B}
+		{C97B7FBA-2D49-4574-B1A7-868A4BCBC68D} = {96B97E6B-1DA4-463B-8C86-17ACB0CBDF6B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FFB5CB6-4F33-407F-B07C-757B9D4A36E6}
+	EndGlobalSection
+EndGlobal
