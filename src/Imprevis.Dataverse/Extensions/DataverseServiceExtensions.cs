@@ -47,16 +47,14 @@ public static class DataverseServiceExtensions
                         yield return entity;
                     }
 
-                    if (results.MoreRecords)
-                    {
-                        fetchXml.SetAttributeValue("page", pageNumber++);
-                        fetchXml.SetAttributeValue("paging-cookie", results.PagingCookie);
-                        fe.Query = fetchXml.ToString();
-                    }
-                    else
+                    if (!results.MoreRecords)
                     {
                         break;
                     }
+
+                    fetchXml.SetAttributeValue("page", pageNumber++);
+                    fetchXml.SetAttributeValue("paging-cookie", results.PagingCookie);
+                    fe.Query = fetchXml.ToString();
                 }
 
                 break;
@@ -75,15 +73,13 @@ public static class DataverseServiceExtensions
                         yield return entity;
                     }
 
-                    if (results.MoreRecords)
-                    {
-                        qe.PageInfo.PageNumber++;
-                        qe.PageInfo.PagingCookie = results.PagingCookie;
-                    }
-                    else
+                    if (!results.MoreRecords)
                     {
                         break;
                     }
+
+                    qe.PageInfo.PageNumber++;
+                    qe.PageInfo.PagingCookie = results.PagingCookie;
                 }
                 break;
             case QueryByAttribute qba:
@@ -101,18 +97,17 @@ public static class DataverseServiceExtensions
                         yield return entity;
                     }
 
-                    if (results.MoreRecords)
-                    {
-                        qba.PageInfo.PageNumber++;
-                        qba.PageInfo.PagingCookie = results.PagingCookie;
-                    }
-                    else
+                    if (!results.MoreRecords)
                     {
                         break;
                     }
+
+                    qba.PageInfo.PageNumber++;
+                    qba.PageInfo.PagingCookie = results.PagingCookie;
                 }
                 break;
-
+            default:
+                throw new NotSupportedException("Unknown query object.");
         }
     }
 }
