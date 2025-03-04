@@ -11,9 +11,9 @@ internal class DataverseServiceFactory : IDataverseServiceFactory
 
     public DataverseServiceFactory(IOptions<DataverseServiceFactoryOptions> options, ILoggerFactory loggerFactory)
     {
-        foreach (var (_, connectionString) in options.Value.ConnectionStrings)
+        foreach (var serviceOptions in options.Value.Services)
         {
-            var service = new DataverseService(connectionString, loggerFactory);
+            var service = new DataverseService(serviceOptions, loggerFactory);
             services.Add(service);
         }
     }

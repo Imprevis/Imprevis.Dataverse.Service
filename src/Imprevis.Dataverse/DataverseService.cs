@@ -8,7 +8,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System.Threading;
 
-internal class DataverseService(string connectionString, ILoggerFactory loggerFactory) : IDataverseService
+internal class DataverseService(DataverseServiceOptions options, ILoggerFactory loggerFactory) : IDataverseService
 {
     private ServiceClient? client;
 
@@ -27,14 +27,14 @@ internal class DataverseService(string connectionString, ILoggerFactory loggerFa
 
     public bool IsReady => client?.IsReady ?? false;
 
-    public Guid OrganizationId => Client.ConnectedOrgId;
-    public string OrganizationName => Client.ConnectedOrgFriendlyName;
+    public Guid OrganizationId => options.OrganizationId;
+    public string OrganizationName => options.OrganizationName;
 
     public void Connect()
     {
         try
         {
-            var client = new ServiceClient(connectionString)
+            var client = new ServiceClient(options.ConnectionString)
             {
                 EnableAffinityCookie = false,
             };
@@ -47,6 +47,18 @@ internal class DataverseService(string connectionString, ILoggerFactory loggerFa
             if (!client.IsReady)
             {
                 throw new DataverseServiceNotReadyException();
+            }
+
+            if (client.ConnectedOrgId != OrganizationId)
+            {
+                throw new DataverseServiceConfigurationException()
+                {
+                    Data =
+                    {
+                        {"OrganizationId", OrganizationId },
+                        {"ConnectedOrgId", client.ConnectedOrgId },
+                    }
+                };
             }
 
             this.client = client;

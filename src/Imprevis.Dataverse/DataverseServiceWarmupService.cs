@@ -4,47 +4,38 @@ using Imprevis.Dataverse.Abstractions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-internal class DataverseServiceWarmupService(IDataverseServiceFactory factory, ILogger<DataverseServiceWarmupService> logger) : IHostedService, IAsyncDisposable
+internal class DataverseServiceWarmupService(IDataverseServiceFactory factory, ILogger<DataverseServiceWarmupService> logger) : BackgroundService
 {
-    private Timer? timer = null;
-
-    public Task StartAsync(CancellationToken cancellationToken = default)
+    protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        logger.LogInformation("CdsServiceWarmupService is starting.");
+        logger.LogInformation("Warming up Dataverse services.");
 
-        // Start timer to connect all services. Use a timer so only one thread tries
-        timer = new Timer(DoWork, null, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(1));
+        while (true)
+        {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                logger.LogInformation("Cancelling the Dataverse warmup service.");
+                return;
+            }
 
-        return Task.CompletedTask;
+            var ready = ConnectAll();
+            if (ready)
+            {
+                logger.LogInformation("All Dataverse services have been warmed up.");
+                return;
+            }
+
+            // Wait and try again.
+            await Task.Delay(TimeSpan.FromMinutes(1), cancellationToken);
+        }
     }
 
-    private async void DoWork(object? state)
+    private bool ConnectAll()
     {
         var services = factory.GetServices(x => !x.IsReady);
 
         Parallel.ForEach(services, service => service.Connect());
 
-        if (services.All(x => x.IsReady))
-        {
-            await StopAsync();
-            await DisposeAsync();
-        }
-    }
-
-    public Task StopAsync(CancellationToken cancellationToken = default)
-    {
-        logger.LogInformation("CdsServiceWarmupService is stopping.");
-
-        timer?.Change(Timeout.Infinite, 0);
-
-        return Task.CompletedTask;
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        if (timer != null)
-        {
-            await timer.DisposeAsync();
-        }
+        return services.All(x => x.IsReady);
     }
 }

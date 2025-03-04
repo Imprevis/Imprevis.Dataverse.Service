@@ -4,6 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Company>Imprevis</Company>
+    <Authors>Imprevis</Authors>
+    <Description></Description>
+    <Copyright>Copyright (c) Imprevis LLC</Copyright>
+    <PackageProjectUrl>https://github.com/Imprevis/Imprevis.Dataverse</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Imprevis/Imprevis.Dataverse</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Imprevis.Dataverse.Abstractions\Imprevis.Dataverse.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

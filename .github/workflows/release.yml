@@ -17,6 +17,6 @@ jobs:
     - name: .NET Test
       run: dotnet test -c Release --no-build
     - name: .NET Pack
-      run: dotnet pack -c Release --no-build --output .
+      run: dotnet pack -c Release --no-build -p:PackageVersion=${{github.event.release.tag_name}} -p:PackageReleaseNotes="${{github.event.release.body}}"
     - name: .NET Push
-      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://apiint.nugettest.org/v3/index.json
+      run: dotnet nuget push src/**/*.nupkg --source ${{variables.nuget_api_url}} --api-key ${{secrets.nuget_api_key}}
