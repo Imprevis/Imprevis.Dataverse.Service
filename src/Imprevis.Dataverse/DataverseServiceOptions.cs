@@ -2,7 +2,7 @@
 
 public class DataverseServiceOptions
 {
-    public Guid OrganizationId { get; }
-    public string OrganizationName { get; } = string.Empty;
-    public string ConnectionString { get; } = string.Empty;
+    public required Guid OrganizationId { get; set; }
+    public required string OrganizationName { get; set; }
+    public required string ConnectionString { get; set; }
 }

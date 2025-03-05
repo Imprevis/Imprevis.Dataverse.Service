@@ -2,9 +2,6 @@
 
 using System;
 
-public class DataverseServiceConfigurationException : Exception
+public class DataverseServiceConfigurationException(string message) : Exception(message)
 {
-    public DataverseServiceConfigurationException() : base("Dataverse service configuration does not match connected service.")
-    {
-    }
 }
