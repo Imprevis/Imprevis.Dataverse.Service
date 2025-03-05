@@ -51,7 +51,7 @@ internal class DataverseService(DataverseServiceOptions options, ILoggerFactory 
 
             if (client.ConnectedOrgId != OrganizationId)
             {
-                throw new DataverseServiceConfigurationException()
+                throw new DataverseServiceConfigurationException("OrganizationId does not match connected service.")
                 {
                     Data =
                     {
