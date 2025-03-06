@@ -8,7 +8,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System.Threading;
 
-internal class DataverseService(DataverseServiceOptions options, ILoggerFactory loggerFactory) : IDataverseService
+internal class DataverseService(DataverseServiceOptions options, IDataverseServiceCache cache, ILoggerFactory loggerFactory) : IDataverseService
 {
     private ServiceClient? client;
 
@@ -24,6 +24,8 @@ internal class DataverseService(DataverseServiceOptions options, ILoggerFactory 
             return client;
         }
     }
+
+    public IDataverseServiceCache Cache { get; } = cache;
 
     public bool IsReady => client?.IsReady ?? false;
 
@@ -200,6 +202,17 @@ internal class DataverseService(DataverseServiceOptions options, ILoggerFactory 
     public Task<TResponse> ExecuteAsync<TResponse>(IDataverseRequest<TResponse> request, CancellationToken cancellationToken = default)
     {
         var logger = loggerFactory.CreateLogger(request.GetType());
-        return request.Execute(this, logger, cancellationToken);
+
+        if (request is IDataverseCachedRequest<TResponse> cachedRequest)
+        {
+            return Cache.GetOrCreate(cachedRequest.CacheKey, async (cancellationToken) =>
+            {
+                return await request.Execute(this, logger, cancellationToken);
+            }, cachedRequest.CacheDuration, cancellationToken);
+        }
+        else
+        {
+            return request.Execute(this, logger, cancellationToken);
+        }
     }
 }
