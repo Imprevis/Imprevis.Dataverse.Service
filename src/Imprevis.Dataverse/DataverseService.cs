@@ -36,7 +36,8 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     {
         try
         {
-            var client = new ServiceClient(options.ConnectionString)
+            var logger = loggerFactory.CreateLogger<ServiceClient>();
+            var client = new ServiceClient(options.ConnectionString, logger)
             {
                 EnableAffinityCookie = false,
             };
