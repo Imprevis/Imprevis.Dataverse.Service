@@ -81,7 +81,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use RetrieveAsync instead.", true)]
     public Entity Retrieve(string entityName, Guid id, ColumnSet columnSet)
     {
-        return Task.Run(() => RetrieveAsync(entityName, id, columnSet)).Result;
+        return RetrieveAsync(entityName, id, columnSet).GetAwaiter().GetResult();
     }
     public Task<Entity> RetrieveAsync(string entityName, Guid id, ColumnSet columnSet)
     {
@@ -95,7 +95,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use RetrieveMultipleAsync instead.", true)]
     public EntityCollection RetrieveMultiple(QueryBase query)
     {
-        return Task.Run(() => RetrieveMultipleAsync(query)).Result;
+        return RetrieveMultipleAsync(query).GetAwaiter().GetResult();
     }
     public Task<EntityCollection> RetrieveMultipleAsync(QueryBase query)
     {
@@ -109,7 +109,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use CreateAsync instead.", true)]
     public Guid Create(Entity entity)
     {
-        return Task.Run(() => Create(entity)).Result;
+        return CreateAsync(entity).GetAwaiter().GetResult();
     }
     public Task<Guid> CreateAsync(Entity entity)
     {
@@ -127,7 +127,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use UpdateAsync instead.", true)]
     public void Update(Entity entity)
     {
-        Task.Run(() => Update(entity)).Wait();
+        UpdateAsync(entity).GetAwaiter().GetResult();
     }
     public Task UpdateAsync(Entity entity)
     {
@@ -141,7 +141,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use DeleteAsync instead.", true)]
     public void Delete(string entityName, Guid id)
     {
-        Task.Run(() => Delete(entityName, id)).Wait();
+        DeleteAsync(entityName, id).GetAwaiter().GetResult();
     }
     public Task DeleteAsync(string entityName, Guid id)
     {
@@ -155,7 +155,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use AssociateAsync instead.", true)]
     public void Associate(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
     {
-        Task.Run(() => AssociateAsync(entityName, entityId, relationship, relatedEntities)).Wait();
+        AssociateAsync(entityName, entityId, relationship, relatedEntities).GetAwaiter().GetResult();
     }
     public Task AssociateAsync(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
     {
@@ -169,7 +169,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use DisassociateAsync instead.", true)]
     public void Disassociate(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
     {
-        Task.Run(() => Disassociate(entityName, entityId, relationship, relatedEntities)).Wait();
+        DisassociateAsync(entityName, entityId, relationship, relatedEntities).GetAwaiter().GetResult();
     }
     public Task DisassociateAsync(string entityName, Guid entityId, Relationship relationship, EntityReferenceCollection relatedEntities)
     {
@@ -183,7 +183,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
     [Obsolete("Use ExecuteAsync instead.", true)]
     public OrganizationResponse Execute(OrganizationRequest request)
     {
-        return Task.Run(() => ExecuteAsync(request)).Result;
+        return ExecuteAsync(request).GetAwaiter().GetResult();
     }
     public Task<OrganizationResponse> ExecuteAsync(OrganizationRequest request)
     {
