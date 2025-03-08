@@ -10,13 +10,13 @@ using System.Threading;
 
 internal class DataverseService(DataverseServiceOptions options, IDataverseServiceCache cache, ILoggerFactory loggerFactory) : IDataverseService
 {
-    private ServiceClient? client;
+    private IOrganizationServiceAsync2? client;
 
-    private ServiceClient Client
+    private IOrganizationServiceAsync2 Client
     {
         get
         {
-            if (client == null || !IsReady)
+            if (client == null)
             {
                 throw new DataverseServiceNotReadyException();
             }
@@ -27,7 +27,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
 
     public IDataverseServiceCache Cache { get; } = cache;
 
-    public bool IsReady => client?.IsReady ?? false;
+    public bool IsReady => client != null;
 
     public Guid OrganizationId => options.OrganizationId;
     public string OrganizationName => options.OrganizationName;
@@ -39,7 +39,7 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
             var logger = loggerFactory.CreateLogger<ServiceClient>();
             var client = new ServiceClient(options.ConnectionString, logger)
             {
-                EnableAffinityCookie = false,
+                 EnableAffinityCookie = false,
             };
 
             if (client.LastException != null)
@@ -76,7 +76,12 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
 
     public void Dispose()
     {
-        client?.Dispose();
+        if (client is ServiceClient serviceClient)
+        {
+            serviceClient.Dispose();
+        }
+
+        client = null;
     }
 
     [Obsolete("Use RetrieveAsync instead.", true)]
