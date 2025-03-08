@@ -3,7 +3,7 @@
 using Imprevis.Dataverse.Abstractions;
 using Microsoft.AspNetCore.Http;
 
-public class ResolveByRouteValue(IHttpContextAccessor? httpContextAccessor, string name, Func<object?, Guid?>? parse = null) : IDataverseServiceResolver
+public class ResolveByRouteValue(IHttpContextAccessor? httpContextAccessor, string name, Func<string?, Guid?>? parse = null) : IDataverseServiceResolver
 {
     public Guid? Resolve()
     {
@@ -19,16 +19,16 @@ public class ResolveByRouteValue(IHttpContextAccessor? httpContextAccessor, stri
         }
 
         var success = httpContext.Request.RouteValues.TryGetValue(name, out var value);
-        if (success)
+        if (success && value != null)
         {
             // Use custom processing method
             if (parse != null)
             {
-                return parse(value);
+                return parse(value.ToString());
             }
 
             // Parse as a Guid
-            var parsed = Guid.TryParse(value?.ToString(), out var organizationId);
+            var parsed = Guid.TryParse(value.ToString(), out var organizationId);
             if (parsed)
             {
                 return organizationId;
