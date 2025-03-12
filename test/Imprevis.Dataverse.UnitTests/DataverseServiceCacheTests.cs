@@ -1,7 +1,6 @@
 namespace Imprevis.Dataverse.UnitTests;
 
 using Microsoft.Extensions.Caching.Hybrid;
-using Moq;
 
 public class DataverseServiceCacheTests
 {

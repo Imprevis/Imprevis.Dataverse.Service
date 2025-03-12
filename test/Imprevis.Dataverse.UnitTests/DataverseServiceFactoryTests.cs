@@ -5,7 +5,6 @@ using Imprevis.Dataverse.Exceptions;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
-using Moq;
 
 public class DataverseServiceFactoryTests
 {

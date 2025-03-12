@@ -3,7 +3,6 @@ namespace Imprevis.Dataverse.UnitTests;
 using Imprevis.Dataverse.Abstractions;
 using Imprevis.Dataverse.Exceptions;
 using Imprevis.Dataverse.Extensions;
-using Moq;
 
 public class DataverseServiceFactoryExtensionsTests
 {
