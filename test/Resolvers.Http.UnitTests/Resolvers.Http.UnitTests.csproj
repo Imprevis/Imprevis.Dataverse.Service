@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Imprevis.Dataverse.Service.Resolvers.Http.UnitTests</AssemblyName>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Resolvers.Http\Resolvers.Http.csproj" />
+  </ItemGroup>
+
+</Project>

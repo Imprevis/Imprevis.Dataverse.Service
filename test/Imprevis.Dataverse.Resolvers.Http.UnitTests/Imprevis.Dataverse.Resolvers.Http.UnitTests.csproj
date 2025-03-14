@@ -1,7 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Imprevis.Dataverse.Resolvers.Http\Imprevis.Dataverse.Resolvers.Http.csproj" />
-  </ItemGroup>
-
-</Project>
