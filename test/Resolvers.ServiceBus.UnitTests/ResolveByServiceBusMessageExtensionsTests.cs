@@ -39,7 +39,6 @@ public class ResolveByServiceBusMessageExtensionsTests
         // Act
         var provider = collection.BuildServiceProvider();
         var resolver = provider.GetService<IDataverseServiceResolver>();
-        var actual = resolver.Resolve();
 
         // Assert
         Assert.NotNull(resolver);

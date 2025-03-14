@@ -4,7 +4,6 @@ using Imprevis.Dataverse.Resolvers.Http;
 using Microsoft.AspNetCore.Http;
 
 public class ResolveByRouteValueTests
-
 {
     [Fact]
     public void Resolve_ShouldReturnNull_WhenHttpContextAccessorIsNull()
@@ -94,6 +93,27 @@ public class ResolveByRouteValueTests
         Assert.Equal(organizationId, actual);
     }
 
+
+    [Fact]
+    public void Resolve_ShouldReturnNull_WhenSuccessfullyParsesNullRouteValue()
+    {
+        // Arrange
+        var context = new DefaultHttpContext();
+        var contextAccessor = new HttpContextAccessor()
+        {
+            HttpContext = context,
+        };
+        context.Request.RouteValues.Add("ROUTE_NAME", null);
+
+        var resolver = new ResolveByRouteValue(contextAccessor, "ROUTE_NAME");
+
+        // Act
+        var actual = resolver.Resolve();
+
+        // Assert
+        Assert.Null(actual);
+    }
+
     [Fact]
     public void Resolve_ShouldReturnOrganizationId_WhenSuccessfullyParsesRouteValueWithCustomParser()
     {
@@ -109,7 +129,7 @@ public class ResolveByRouteValueTests
 
         var resolver = new ResolveByRouteValue(contextAccessor, "ROUTE_NAME", value =>
         {
-            _ = Guid.TryParse(value?.ToString()?.Replace("--", string.Empty), out var result);
+            _ = Guid.TryParse(value?.Replace("--", string.Empty), out var result);
             return result;
         });
 

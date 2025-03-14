@@ -1,10 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project>
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
@@ -24,11 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Imprevis.Dataverse\Imprevis.Dataverse.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Using Include="Moq" />
     <Using Include="Xunit" />
   </ItemGroup>
-
+  
 </Project>

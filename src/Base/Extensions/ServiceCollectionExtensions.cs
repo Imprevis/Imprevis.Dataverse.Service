@@ -3,7 +3,6 @@
 using Imprevis.Dataverse.Abstractions;
 using Imprevis.Dataverse.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -13,13 +12,16 @@ public static class ServiceCollectionExtensions
 
         services.AddLogging();
 
+        services.AddHybridCache();
+
         services.AddOptions<DataverseServiceFactoryOptions>()
             .BindConfiguration(DataverseServiceFactoryOptions.Section)
             .ValidateOnStart();
 
-        services.TryAddSingleton<IDataverseServiceFactory, DataverseServiceFactory>();
+        services.AddSingleton<IDataverseServiceCacheFactory, DataverseServiceCacheFactory>();
+        services.AddSingleton<IDataverseServiceFactory, DataverseServiceFactory>();
 
-        services.TryAddTransient(provider =>
+        services.AddTransient(provider =>
         {
             var factory = provider.GetRequiredService<IDataverseServiceFactory>();
             var resolvers = provider.GetServices<IDataverseServiceResolver>();

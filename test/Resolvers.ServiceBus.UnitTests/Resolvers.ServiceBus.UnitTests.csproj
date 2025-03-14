@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests</AssemblyName>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Resolvers.ServiceBus\Resolvers.ServiceBus.csproj" />
+  </ItemGroup>
+
+</Project>
