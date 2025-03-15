@@ -1,4 +1,4 @@
-namespace Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests;
+namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests;
 
 using Azure.Messaging.ServiceBus;
 using System.Text.Json;

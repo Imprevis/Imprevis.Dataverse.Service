@@ -1,7 +1,7 @@
-﻿namespace Imprevis.Dataverse;
+﻿namespace Imprevis.Dataverse.Service;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Exceptions;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Exceptions;
 using Microsoft.Extensions.Logging;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;

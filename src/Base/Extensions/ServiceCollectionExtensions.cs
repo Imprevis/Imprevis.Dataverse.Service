@@ -1,7 +1,7 @@
-﻿namespace Imprevis.Dataverse.Extensions;
+﻿namespace Imprevis.Dataverse.Service.Extensions;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Exceptions;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions

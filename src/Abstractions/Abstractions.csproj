@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>Imprevis.Dataverse.Service.Abstractions</AssemblyName>
+    <DefaultNamespace>Imprevis.Dataverse.Service.Abstractions</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>

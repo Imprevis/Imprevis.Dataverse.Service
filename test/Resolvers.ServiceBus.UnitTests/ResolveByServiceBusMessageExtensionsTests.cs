@@ -1,8 +1,8 @@
-﻿namespace Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests.Mock;
-using Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests.Mocks;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests.Mock;
+using Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests.Mocks;
 using Microsoft.Extensions.DependencyInjection;
 
 public class ResolveByServiceBusMessageExtensionsTests

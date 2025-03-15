@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>Imprevis.Dataverse.Service.Resolvers.Http</AssemblyName>
+    <DefaultNamespace>Imprevis.Dataverse.Service.Resolvers.Http</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>

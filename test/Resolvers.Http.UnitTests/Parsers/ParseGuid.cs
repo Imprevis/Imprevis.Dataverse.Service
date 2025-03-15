@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse.Resolvers.Http.UnitTests.Parsers;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Parsers;
 
 using System;
 

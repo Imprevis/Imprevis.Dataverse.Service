@@ -1,9 +1,9 @@
-﻿namespace Imprevis.Dataverse.UnitTests.Extensions;
+﻿namespace Imprevis.Dataverse.Service.UnitTests.Extensions;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-static class ServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
     public static void AddConfiguration(this IServiceCollection collection, Dictionary<string, string?>? values = null)
     {

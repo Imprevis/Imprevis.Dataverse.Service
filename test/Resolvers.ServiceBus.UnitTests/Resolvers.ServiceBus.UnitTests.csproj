@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests</AssemblyName>
+    <DefaultNamespace>Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests</DefaultNamespace>
   </PropertyGroup>
   
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse;
+﻿namespace Imprevis.Dataverse.Service;
 
 public class DataverseServiceOptions
 {

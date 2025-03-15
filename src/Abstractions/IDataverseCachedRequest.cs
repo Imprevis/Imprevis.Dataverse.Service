@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse.Abstractions;
+﻿namespace Imprevis.Dataverse.Service.Abstractions;
 
 public interface IDataverseCachedRequest<TResponse> : IDataverseRequest<TResponse>
 {

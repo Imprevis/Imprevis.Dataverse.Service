@@ -1,9 +1,9 @@
-namespace Imprevis.Dataverse.Resolvers.Http.UnitTests;
+namespace Imprevis.Dataverse.Service.Resolvers.Http.UnitTests;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Resolvers.Http;
-using Imprevis.Dataverse.Resolvers.Http.UnitTests.Mocks;
-using Imprevis.Dataverse.Resolvers.Http.UnitTests.Parsers;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Resolvers.Http;
+using Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Mocks;
+using Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Parsers;
 using Microsoft.Extensions.DependencyInjection;
 
 public class ResolveByBodyExtensionsTests

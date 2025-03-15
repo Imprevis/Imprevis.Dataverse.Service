@@ -1,6 +1,6 @@
-﻿namespace Imprevis.Dataverse.Resolvers.Http;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.Http;
 
-using Imprevis.Dataverse.Abstractions;
+using Imprevis.Dataverse.Service.Abstractions;
 using Microsoft.AspNetCore.Http;
 
 public class ResolveByCookie(IHttpContextAccessor? httpContextAccessor, string name, Func<string?, Guid?>? parse = null) : IDataverseServiceResolver
