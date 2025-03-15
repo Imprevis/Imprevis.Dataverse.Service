@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 public class DataverseServiceTests
 {
     [Fact]
-    public async Task True()
+    public async Task Service_ConnectsSuccessfully()
     {
         var configuration = new ConfigurationBuilder()
             .AddEnvironmentVariables()
