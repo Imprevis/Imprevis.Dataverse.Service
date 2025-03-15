@@ -63,8 +63,8 @@ public class ServiceCollectionExtensionsTests
             [
                 new DataverseServiceOptions
                 {
-                     OrganizationId = Guid.NewGuid(),
-                     OrganizationName = "Test Org 1",
+                     Id = Guid.NewGuid(),
+                     Name = "Test Org 1",
                      ConnectionString = string.Empty,
                 }
             ];
@@ -90,14 +90,14 @@ public class ServiceCollectionExtensionsTests
             [
                 new DataverseServiceOptions
                 {
-                     OrganizationId = Guid.NewGuid(),
-                     OrganizationName = "Test Org 1",
+                     Id = Guid.NewGuid(),
+                     Name = "Test Org 1",
                      ConnectionString = string.Empty,
                 },
                 new DataverseServiceOptions
                 {
-                     OrganizationId = Guid.NewGuid(),
-                     OrganizationName = "Test Org 2",
+                     Id = Guid.NewGuid(),
+                     Name = "Test Org 2",
                      ConnectionString = string.Empty,
                 },
             ];
@@ -122,8 +122,8 @@ public class ServiceCollectionExtensionsTests
             [
                 new DataverseServiceOptions
                 {
-                     OrganizationId = Guid.NewGuid(),
-                     OrganizationName = "Test Org 1",
+                     Id = Guid.NewGuid(),
+                     Name = "Test Org 1",
                      ConnectionString = string.Empty,
                 }
             ];

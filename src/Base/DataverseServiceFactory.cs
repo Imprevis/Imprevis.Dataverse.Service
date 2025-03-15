@@ -13,7 +13,7 @@ internal class DataverseServiceFactory : IDataverseServiceFactory
     {
         foreach (var serviceOptions in options.Value.Services)
         {
-            var cache = cacheFactory.Create(serviceOptions.OrganizationId);
+            var cache = cacheFactory.Create(serviceOptions.Id);
             var service = new DataverseService(serviceOptions, cache, loggerFactory);
             services.Add(service);
         }

@@ -71,8 +71,8 @@ public class DataverseServiceFactoryTests
         var options = new DataverseServiceFactoryOptions();
         var services = Enumerable.Range(1, numberOfService).Select(x => new DataverseServiceOptions
         {
-            OrganizationId = Guid.NewGuid(),
-            OrganizationName = $"Organization {x}",
+            Id = Guid.NewGuid(),
+            Name = $"Organization {x}",
             ConnectionString = string.Empty,
         });
 
