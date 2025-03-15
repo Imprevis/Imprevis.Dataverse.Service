@@ -1,7 +1,7 @@
-﻿namespace Imprevis.Dataverse.Resolvers.ServiceBus;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus;
 
 using Azure.Messaging.ServiceBus;
-using Imprevis.Dataverse.Abstractions;
+using Imprevis.Dataverse.Service.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class ResolveByServiceBusMessageExtensions

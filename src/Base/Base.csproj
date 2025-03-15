@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>Imprevis.Dataverse.Service</AssemblyName>
+    <DefaultNamespace>Imprevis.Dataverse.Service</DefaultNamespace>
   </PropertyGroup>
   
   <ItemGroup>

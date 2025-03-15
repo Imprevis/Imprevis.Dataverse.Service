@@ -1,8 +1,8 @@
-namespace Imprevis.Dataverse.Resolvers.Http.UnitTests;
+namespace Imprevis.Dataverse.Service.Resolvers.Http.UnitTests;
 
-using Imprevis.Dataverse.Resolvers.Http;
-using Imprevis.Dataverse.Resolvers.Http.UnitTests.Mocks;
-using Imprevis.Dataverse.Resolvers.Http.UnitTests.Parsers;
+using Imprevis.Dataverse.Service.Resolvers.Http;
+using Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Mocks;
+using Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Parsers;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 

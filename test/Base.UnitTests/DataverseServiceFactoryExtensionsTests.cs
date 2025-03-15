@@ -1,8 +1,8 @@
-namespace Imprevis.Dataverse.UnitTests;
+namespace Imprevis.Dataverse.Service.UnitTests;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Exceptions;
-using Imprevis.Dataverse.Extensions;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Exceptions;
+using Imprevis.Dataverse.Service.Extensions;
 
 public class DataverseServiceFactoryExtensionsTests
 {

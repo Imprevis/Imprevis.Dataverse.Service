@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse.Resolvers.Http.UnitTests.Mocks;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.Http.UnitTests.Mocks;
 
 using Microsoft.AspNetCore.Http;
 using System.Collections;

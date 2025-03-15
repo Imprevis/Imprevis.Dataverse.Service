@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse.Exceptions;
+﻿namespace Imprevis.Dataverse.Service.Exceptions;
 
 using System;
 

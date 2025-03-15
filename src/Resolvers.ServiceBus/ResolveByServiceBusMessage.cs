@@ -1,7 +1,7 @@
-﻿namespace Imprevis.Dataverse.Resolvers.ServiceBus;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus;
 
 using Azure.Messaging.ServiceBus;
-using Imprevis.Dataverse.Abstractions;
+using Imprevis.Dataverse.Service.Abstractions;
 using System.Text.Json;
 
 public class ResolveByServiceBusMessage<TRequest>(ServiceBusReceivedMessage? message, Func<TRequest?, Guid?> parse) : IDataverseServiceResolver

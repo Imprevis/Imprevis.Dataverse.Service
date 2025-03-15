@@ -1,4 +1,4 @@
-namespace Imprevis.Dataverse.UnitTests;
+namespace Imprevis.Dataverse.Service.UnitTests;
 
 public class DataverseServiceTests
 {

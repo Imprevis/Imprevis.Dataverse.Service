@@ -1,9 +1,9 @@
-namespace Imprevis.Dataverse.UnitTests;
+namespace Imprevis.Dataverse.Service.UnitTests;
 
-using Imprevis.Dataverse.Abstractions;
-using Imprevis.Dataverse.Exceptions;
-using Imprevis.Dataverse.Extensions;
-using Imprevis.Dataverse.UnitTests.Extensions;
+using Imprevis.Dataverse.Service.Abstractions;
+using Imprevis.Dataverse.Service.Exceptions;
+using Imprevis.Dataverse.Service.Extensions;
+using Imprevis.Dataverse.Service.UnitTests.Extensions;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

@@ -1,6 +1,6 @@
-namespace Imprevis.Dataverse.Resolvers.Http.UnitTests;
+namespace Imprevis.Dataverse.Service.Resolvers.Http.UnitTests;
 
-using Imprevis.Dataverse.Resolvers.Http;
+using Imprevis.Dataverse.Service.Resolvers.Http;
 using Microsoft.AspNetCore.Http;
 
 public class ResolveByQueryStringTests

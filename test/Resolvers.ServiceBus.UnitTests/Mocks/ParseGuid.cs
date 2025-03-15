@@ -1,4 +1,4 @@
-﻿namespace Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests.Mocks;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests.Mocks;
 
 using System;
 

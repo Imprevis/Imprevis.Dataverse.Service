@@ -1,6 +1,6 @@
-﻿namespace Imprevis.Dataverse.Resolvers.ServiceBus.UnitTests.Mock;
+﻿namespace Imprevis.Dataverse.Service.Resolvers.ServiceBus.UnitTests.Mock;
 
-using Imprevis.Dataverse.Abstractions;
+using Imprevis.Dataverse.Service.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 internal class MockDataverseServiceBuilder(IServiceCollection services) : IDataverseServiceBuilder
