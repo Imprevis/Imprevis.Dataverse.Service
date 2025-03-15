@@ -29,17 +29,34 @@ internal class DataverseService(DataverseServiceOptions options, IDataverseServi
 
     public bool IsReady => client != null;
 
-    public Guid OrganizationId => options.OrganizationId;
-    public string OrganizationName => options.OrganizationName;
+    public Guid OrganizationId => options.Id;
+    public string OrganizationName => options.Name;
+
+    private string GetConnectionString()
+    {
+        if (!string.IsNullOrEmpty(options.ConnectionString))
+        {
+            return options.ConnectionString;
+        }
+
+        if (!string.IsNullOrEmpty(options.Url) && !string.IsNullOrEmpty(options.ClientId) && !string.IsNullOrEmpty(options.ClientSecret))
+        {
+            return $"AuthType=ClientSecret;Url={options.Url};ClientId={options.ClientId};ClientSecret={options.ClientSecret}";
+        }
+
+        throw new DataverseServiceConfigurationException("Must provide ConnectionString or Url/ClientId/ClientSecret.");
+    }
 
     public void Connect()
     {
         try
         {
+            var connectionString = GetConnectionString();
             var logger = loggerFactory.CreateLogger<ServiceClient>();
+
             var client = new ServiceClient(options.ConnectionString, logger)
             {
-                 EnableAffinityCookie = false,
+                EnableAffinityCookie = false,
             };
 
             if (client.LastException != null)
